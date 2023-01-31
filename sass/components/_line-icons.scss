@@ -1,0 +1,195 @@
+// .fixed-elements {
+//   color: var(--secondaryColor);
+
+//   &__left {
+//     position: fixed;
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+//   }
+
+//   &__left {
+//     bottom: 0;
+//     left: 7%;
+//   }
+
+//   &__left-image {
+//     display: inline-block;
+//   }
+
+//   &__img {
+//     display: inline-block;
+//     height: 3rem;
+//     width: 3rem;
+//     margin-bottom: 1.3rem;
+
+//     &::before {
+//       content: "";
+//       display: inline-block;
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 3rem;
+//       height: 3rem;
+//       background: var(--secondaryColor);
+//       -webkit-mask-image: url(../../img/github.png);
+//       mask-image: url(../../img/github.png);
+//       -webkit-mask-size: cover; /* this makes the mask cover the whole overlay */
+//       mask-size: cover;
+//     }
+
+//     // &::after {
+//     //   content: "";
+//     //   display: inline-block;
+//     //   position: absolute;
+//     //   top: -4rem;
+//     //   left: 0;
+//     //   width: 3rem;
+//     //   height: 3rem;
+
+//     //   background: var(--secondaryColor);
+//     //   -webkit-mask-image: url(../../img/frontendmentor.png);
+//     //   mask-image: url(../../img/frontendmentor.png);
+//     //   -webkit-mask-size: cover; /* this makes the mask cover the whole overlay */
+//     //   mask-size: cover;
+//     // }
+//   }
+
+//   &__right {
+//     position: fixed;
+//     bottom: 0;
+//     right: 7%;
+
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+
+//     &-mail {
+//       position: relative;
+//       display: inline-block;
+//       -webkit-transform-origin: 100% 0;
+//       -moz-transform-origin: 100% 0;
+//       -ms-transform-origin: 100% 0;
+//       -o-transform-origin: 100% 0;
+//       transform-origin: 100% 0%;
+//       transform: rotate(90deg) translateX(-5rem);
+//       width: auto;
+//       height: auto;
+
+//       &::after {
+//         content: "madjardusan@gmail.com";
+//         display: inline-block;
+//         font-weight: 800;
+//         color: var(--secondaryColor);
+//         font-size: 1.7rem;
+//         position: absolute;
+//         right: 0;
+//         top: -50%;
+//       }
+//     }
+//   }
+
+//   &__line {
+//     background-color: var(--secondaryColor);
+//     width: 1px;
+//     height: 17rem;
+//   }
+// }
+
+////////////////////////////////////////////////
+.fixed-elements {
+  color: var(--secondaryColor);
+
+  &__left {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__left {
+    bottom: 0;
+    left: 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__left-image {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &__img-github {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3rem;
+      height: 3rem;
+      background: var(--secondaryColor);
+      -webkit-mask-image: url(../../img/github.png);
+      mask-image: url(../../img/github.png);
+      -webkit-mask-size: cover; /* this makes the mask cover the whole overlay */
+      mask-size: cover;
+    }
+  }
+
+  &__img-frontendmentor {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background: var(--secondaryColor);
+    -webkit-mask-image: url(../../img/frontend-mentor-logo.png);
+    mask-image: url(../../img/frontend-mentor-logo.png);
+    -webkit-mask-size: cover;
+    mask-size: cover;
+  }
+
+  &__right {
+    position: fixed;
+    bottom: 0;
+    right: 7%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &-mail {
+      position: relative;
+      display: inline-block;
+      -webkit-transform-origin: 100% 0;
+      -moz-transform-origin: 100% 0;
+      -ms-transform-origin: 100% 0;
+      -o-transform-origin: 100% 0;
+      transform-origin: 100% 0%;
+      transform: rotate(90deg) translateX(-5rem);
+      width: auto;
+      height: auto;
+
+      &::after {
+        content: "madjardusan@gmail.com";
+        display: inline-block;
+        font-weight: 800;
+        color: var(--secondaryColor);
+        font-size: 1.7rem;
+        position: absolute;
+        right: 0;
+        top: -50%;
+      }
+    }
+  }
+
+  &__line {
+    background-color: var(--secondaryColor);
+    width: 1px;
+    height: 17rem;
+  }
+}

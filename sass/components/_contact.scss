@@ -1,0 +1,126 @@
+.contact {
+  justify-items: center;
+  align-items: center;
+
+  &__details {
+    // padding: 2rem;
+  }
+
+  &__text {
+    padding: 2rem 3rem;
+    background-color: var(--projectCardColor);
+    border-radius: 0.6rem;
+    width: 20rem;
+    justify-self: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  &__icons {
+    display: inline-block;
+    font-size: 2.2rem;
+  }
+
+  &__icon {
+    color: var(--primaryColor);
+  }
+
+  &__link {
+    display: inline-block;
+    color: var(--paragraphColor);
+    text-decoration: none;
+    font-size: 1.4rem;
+  }
+
+  &__message {
+    color: var(--primaryColor);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    &--text {
+      font-size: 1.6rem;
+    }
+
+    &--icon {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.form {
+  width: 100%;
+
+  &__group {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__element {
+    font-family: inherit;
+    color: var(--textColor);
+    font-size: 1.6rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    border-radius: 0.7rem;
+    background-color: var(--formColor);
+    border-bottom: 2.2px solid transparent;
+    border: 1.6px solid var(--secondaryColor);
+    outline: none;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-0.18rem) scale(1.009);
+    }
+
+    &:focus {
+      border: transparent;
+      font-size: 1.7rem;
+      transform: translateY(-0.2rem) scale(1);
+      font-weight: inherit;
+      border-bottom: 2.4px solid var(--primaryColor);
+      &:invalid {
+        border-bottom: 2px solid red;
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      color: var(--secondaryColor);
+    }
+
+    &--input {
+    }
+
+    &--textarea {
+      font-size: 1.6rem;
+      height: 14rem;
+      resize: none;
+    }
+  }
+
+  &__element:focus &__label {
+    top: 5rem;
+  }
+
+  &__element--input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__label {
+    display: inline-block;
+    color: var(--secondaryColor);
+    font-weight: 800;
+    margin-left: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,51 @@
+.grid {
+  margin: 0 auto;
+  display: grid;
+  gap: $gutter-vertical;
+
+  &--small {
+    gap: $gutter-vertical-small;
+  }
+
+  &--smallest {
+    gap: $gutter-vertical-smallest;
+  }
+
+  @include respond(tab-port) {
+    gap: 0;
+    row-gap: $gutter-vertical-small;
+    padding: 0 3rem;
+  }
+
+  @include respond(tab-port) {
+    grid-template-columns: 1fr !important;
+  }
+
+  &--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+
+    &1 {
+      grid-template-columns: 1.3fr 0.9fr;
+    }
+  }
+
+  &--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--4-cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .coll-1-of-3 {
+    grid-column: 1/3;
+  }
+
+  .coll-2-of-4 {
+    grid-column: 3/5;
+  }
+
+  .coll-3-of-4 {
+    grid-column: 2/5;
+  }
+}

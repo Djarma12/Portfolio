@@ -1,0 +1,93 @@
+.project {
+  &__card {
+    max-width: 40rem;
+    height: auto;
+    background-color: var(--projectCardColor);
+    padding: 2.4rem 1.2rem;
+    border-radius: 1.6rem;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+
+    &--live {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      font-weight: 300;
+      text-decoration: none;
+      color: red;
+      position: relative;
+      margin-left: 2rem;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        box-sizing: content-box;
+        background: red;
+        position: absolute;
+        top: 0.5rem;
+        left: -1.7rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        z-index: 1;
+      }
+    }
+
+    &--github {
+      &::after {
+        content: "";
+        display: inline-block;
+        background: var(--primaryColor);
+        width: 3.4rem;
+        height: 3.4rem;
+        -webkit-mask-image: url(../../img/github-fill.png);
+        mask-image: url(../../img/github-fill.png);
+        -webkit-mask-size: cover; /* this makes the mask cover the whole overlay */
+        mask-size: cover;
+      }
+    }
+  }
+
+  &__img {
+    margin-bottom: 1.4rem;
+    height: auto;
+    width: 100%;
+  }
+
+  &__image {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    background-size: cover;
+  }
+
+  &__content {
+    color: var(--secondaryColor);
+    // height: 100%;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    margin-bottom: 1.4rem;
+    min-height: 10rem;
+  }
+
+  &__technologies {
+    font-size: 1.8rem;
+    // color: var(--paragraphColor);
+    margin-right: 1.2rem;
+
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+  }
+
+  &__technology {
+    display: inline-block;
+  }
+}

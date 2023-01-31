@@ -1,0 +1,29 @@
+.header {
+  width: 60%;
+  margin-block: 9rem 11rem;
+  margin-inline: auto;
+
+  &__text-box {
+    width: 70%;
+    margin-bottom: 2rem;
+  }
+
+  &__text-1 {
+    font-size: 3.5rem;
+    color: var(--secondaryColor);
+    margin-bottom: 2.8rem;
+  }
+
+  &__text-2 {
+    font-size: 3.1rem;
+    font-weight: 300;
+    color: var(--paragraphColor);
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}

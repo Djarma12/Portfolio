@@ -1,0 +1,43 @@
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+
+  &__primary,
+  &__secondary,
+  &__form {
+    color: var(--BgColor);
+    background-color: var(--primaryColor);
+    letter-spacing: 0.2px;
+    border-radius: 2px;
+  }
+
+  &__primary {
+    font-size: 2.2rem;
+    padding: 1.6rem 3.2rem;
+  }
+
+  &__secondary {
+    font-size: 1.8rem;
+    padding: 1.4rem 3rem;
+  }
+
+  &__tertiary {
+    font-size: 1.8rem;
+    color: var(--primaryColor);
+    font-weight: 300;
+    letter-spacing: 0.7px;
+  }
+
+  &__form {
+    font-family: inherit;
+    color: var(--BgColor);
+    font-size: 1.4rem;
+    padding: 1.8rem 3.2rem;
+    width: 100%;
+    font-weight: 600;
+    border-radius: 0.6rem;
+    letter-spacing: 0.8px;
+  }
+}

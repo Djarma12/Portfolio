@@ -1,0 +1,45 @@
+.skills {
+  justify-items: center;
+  padding: 2rem 2.4rem;
+
+  &__box {
+    padding: 0 2.4rem;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 2.8rem;
+
+    &--main {
+      font-size: 2.4rem;
+    }
+
+    &--sub {
+      font-size: 1.6rem;
+      color: var(--secondaryColor);
+      letter-spacing: 0.4px;
+    }
+  }
+
+  &__images {
+    display: flex;
+    gap: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  &__img {
+    display: inline-block;
+    height: 3.7rem;
+    width: 3.7rem;
+    border-radius: 2px;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--secondaryColor);
+    margin-left: -2.5rem;
+  }
+}

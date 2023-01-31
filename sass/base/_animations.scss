@@ -1,0 +1,37 @@
+@keyframes moveInRight {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(13.5rem);
+  }
+}
+
+@keyframes moveMobileNavOpen {
+  0% {
+    transform: translate(-50%, -120%);
+  }
+
+  65% {
+    transform: translate(-50%, 15%);
+  }
+
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes moveMobileNavClose {
+  0% {
+    transform: translate(-50%, 0);
+  }
+
+  65% {
+    transform: translate(-50%, 15%);
+  }
+
+  100% {
+    transform: translate(-50%, -120%);
+  }
+}
