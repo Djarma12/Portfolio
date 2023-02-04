@@ -3,14 +3,19 @@
   display: inline-block;
   text-decoration: none;
   border: none;
+  box-shadow: 0 2rem 3rem $shadow-cards;
 
   &__primary,
   &__secondary,
   &__form {
     color: var(--BgColor);
-    background-color: var(--primaryColor);
+    background: linear-gradient(
+      to right bottom,
+      var(--primaryColor) 30%,
+      var(--primaryHover)
+    );
     letter-spacing: 0.2px;
-    border-radius: 2px;
+    border-radius: 3px;
   }
 
   &__primary {
@@ -21,6 +26,10 @@
   &__secondary {
     font-size: 1.8rem;
     padding: 1.4rem 3rem;
+
+    &--text {
+      margin-right: 0.6rem;
+    }
   }
 
   &__tertiary {
@@ -39,5 +48,17 @@
     font-weight: 600;
     border-radius: 0.6rem;
     letter-spacing: 0.8px;
+  }
+
+  &__icon {
+    display: inline-block;
+    font-size: 2.2rem;
+    width: 1.7rem;
+    margin-left: 0.6rem;
+    transform: translateY(1.4px);
+
+    &-animated {
+      animation: arrowUpDown 0.65s infinite;
+    }
   }
 }

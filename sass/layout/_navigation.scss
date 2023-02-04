@@ -1,3 +1,19 @@
+.sticky {
+  .navigation {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: var(--projectCardColor);
+    animation: downNaw 0.4s;
+    box-shadow: 0 2.4rem 2.8rem rgba(0, 0, 0, 0.05);
+  }
+
+  .header {
+    margin-top: 18rem;
+  }
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -5,9 +21,10 @@
   height: 9rem;
   font-size: 2rem;
   padding-inline: 6rem;
+  width: 100%;
 
-  .active &__logo {
-    font-size: 3.2rem;
+  &__logo {
+    font-size: 3rem;
   }
 
   &__nav {
@@ -26,15 +43,17 @@
     }
 
     &-close {
-      // display: none;
-      display: block;
-      position: absolute;
-      border-radius: 50%;
-      background-color: var(--textColor);
-      width: 3.2rem;
-      height: 3.2rem;
-      top: 2.5rem;
-      right: 2.5rem;
+      display: none;
+      @include respond(tab-port) {
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        background-color: var(--textColor);
+        width: 3.2rem;
+        height: 3.2rem;
+        top: 2.5rem;
+        right: 2.5rem;
+      }
     }
   }
 
@@ -59,7 +78,6 @@
     display: flex;
     gap: 3rem;
     @include respond(tab-port) {
-      // display: none;
       background-color: var(--projectCardColor);
       border-radius: 3.4rem;
       padding: 5.6rem 3rem 3.6rem 3rem;
@@ -68,8 +86,9 @@
       left: 50%;
       width: 80%;
       transform: translate(-50%, -120%);
+      transition: translate 0.3s;
       opacity: 0;
-      animation: 0.325s moveMobileNavClose ease-out;
+      // animation: 0.325s moveMobileNavClose ease-out;
 
       display: flex;
       gap: 2rem;
@@ -95,54 +114,53 @@
   }
 }
 
-.active {
+.active .navigation {
   // animation: moveMobileNavClose 0.65s ease-out;
-  .navigation {
-    &__btn {
-      // &-close {
-      //   display: block;
-      //   position: absolute;
-      //   border-radius: 50%;
-      //   background-color: var(--textColor);
-      //   width: 3.2rem;
-      //   height: 3.2rem;
-      //   top: 2.5rem;
-      //   right: 2.5rem;
-      // }
-    }
 
-    // &__img-close {
-    //   display: inline-block;
+  &__btn {
+    // &-close {
+    //   display: block;
     //   position: absolute;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
     //   border-radius: 50%;
-    //   width: 2rem;
-    //   height: 2rem;
+    //   background-color: var(--textColor);
+    //   width: 3.2rem;
+    //   height: 3.2rem;
+    //   top: 2.5rem;
+    //   right: 2.5rem;
     // }
+  }
 
-    &__list {
-      // animation: moveMobileNav ease-in;
-      animation: 0.325s moveMobileNavOpen ease-out;
+  // &__img-close {
+  //   display: inline-block;
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   border-radius: 50%;
+  //   width: 2rem;
+  //   height: 2rem;
+  // }
 
-      animation-fill-mode: backwards;
-      transform: translate(-50%, 0);
-      opacity: 1;
-      // background-color: var(--projectCardColor);
-      // border-radius: 3.4rem;
-      // padding: 5.6rem 3rem 3.6rem 3rem;
-      // position: fixed;
-      // top: 10%;
-      // left: 50%;
-      // transform: translateX(-50%);
-      // width: 80%;
+  &__list {
+    // animation: moveMobileNav ease-in;
+    animation: 0.325s moveMobileNavOpen ease-out;
 
-      // display: flex;
-      // gap: 2rem;
-      // justify-content: center;
-      // align-items: center;
-      // flex-direction: column;
-    }
+    animation-fill-mode: backwards;
+    transform: translate(-50%, 0);
+    opacity: 1;
+    // background-color: var(--projectCardColor);
+    // border-radius: 3.4rem;
+    // padding: 5.6rem 3rem 3.6rem 3rem;
+    // position: fixed;
+    // top: 10%;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // width: 80%;
+
+    // display: flex;
+    // gap: 2rem;
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
   }
 }

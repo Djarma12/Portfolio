@@ -60,6 +60,20 @@ ORDER: Base + typography > general layout + grid > page layout > components
   100% {
     transform: translate(-50%, -120%); } }
 
+@keyframes arrowUpDown {
+  0% {
+    transform: translateY(-0.26rem); }
+  50% {
+    transform: translateY(0.26rem); }
+  100% {
+    transform: translateY(-0.26rem); } }
+
+@keyframes downNaw {
+  0% {
+    transform: translateY(-9rem); }
+  100% {
+    transform: translateY(0); } }
+
 *,
 *::after,
 *::before {
@@ -192,18 +206,21 @@ body {
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
-  border: none; }
+  border: none;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.15); }
   .btn__primary, .btn__secondary, .btn__form {
     color: var(--BgColor);
-    background-color: var(--primaryColor);
+    background: linear-gradient(to right bottom, var(--primaryColor) 30%, var(--primaryHover));
     letter-spacing: 0.2px;
-    border-radius: 2px; }
+    border-radius: 3px; }
   .btn__primary {
     font-size: 2.2rem;
     padding: 1.6rem 3.2rem; }
   .btn__secondary {
     font-size: 1.8rem;
     padding: 1.4rem 3rem; }
+    .btn__secondary--text {
+      margin-right: 0.6rem; }
   .btn__tertiary {
     font-size: 1.8rem;
     color: var(--primaryColor);
@@ -218,6 +235,14 @@ body {
     font-weight: 600;
     border-radius: 0.6rem;
     letter-spacing: 0.8px; }
+  .btn__icon {
+    display: inline-block;
+    font-size: 2.2rem;
+    width: 1.7rem;
+    margin-left: 0.6rem;
+    transform: translateY(1.4px); }
+    .btn__icon-animated {
+      animation: arrowUpDown 0.65s infinite; }
 
 .contact {
   justify-items: center;
@@ -228,6 +253,7 @@ body {
     border-radius: 0.6rem;
     width: 20rem;
     justify-self: center;
+    box-shadow: 0 1.8rem 3rem rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -383,7 +409,8 @@ body {
   height: auto;
   background-color: var(--projectCardColor);
   padding: 2.4rem 1.2rem;
-  border-radius: 1.6rem; }
+  border-radius: 1.6rem;
+  box-shadow: 0 1.8rem 3rem rgba(0, 0, 0, 0.15); }
 
 .project__link {
   display: flex;
@@ -586,15 +613,28 @@ body {
     flex-direction: column;
     gap: 3rem; }
 
+.sticky .navigation {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: var(--projectCardColor);
+  animation: downNaw 0.4s;
+  box-shadow: 0 2.4rem 2.8rem rgba(0, 0, 0, 0.05); }
+
+.sticky .header {
+  margin-top: 18rem; }
+
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 9rem;
   font-size: 2rem;
-  padding-inline: 6rem; }
-  .active .navigation__logo {
-    font-size: 3.2rem; }
+  padding-inline: 6rem;
+  width: 100%; }
+  .navigation__logo {
+    font-size: 3rem; }
   .navigation__nav {
     position: relative; }
   .navigation__btn {
@@ -607,14 +647,17 @@ body {
       .navigation__btn {
         display: inline-block; } }
     .navigation__btn-close {
-      display: block;
-      position: absolute;
-      border-radius: 50%;
-      background-color: var(--textColor);
-      width: 3.2rem;
-      height: 3.2rem;
-      top: 2.5rem;
-      right: 2.5rem; }
+      display: none; }
+      @media only screen and (max-width: 56.2em) {
+        .navigation__btn-close {
+          display: block;
+          position: absolute;
+          border-radius: 50%;
+          background-color: var(--textColor);
+          width: 3.2rem;
+          height: 3.2rem;
+          top: 2.5rem;
+          right: 2.5rem; } }
   .navigation__img-open {
     display: inline-block;
     color: var(--primaryColor);
@@ -641,8 +684,8 @@ body {
         left: 50%;
         width: 80%;
         transform: translate(-50%, -120%);
+        transition: translate 0.3s;
         opacity: 0;
-        animation: 0.325s moveMobileNavClose ease-out;
         display: flex;
         gap: 2rem;
         justify-content: center;
@@ -682,8 +725,8 @@ body {
   padding-block: 11rem; }
 
 .footer {
-  padding-block: 1.2rem;
-  font-size: 1.2rem;
+  padding-block: 1.8rem;
+  font-size: 1.6rem;
   background-color: var(--projectCardColor);
   color: var(--paragraphColor);
   letter-spacing: 0.3px;

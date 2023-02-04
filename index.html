@@ -25,7 +25,11 @@
   </head>
   <body>
     <div class="navigation">
-      <div class="navigation__logo">Dm.</div>
+      <div class="navigation__logo">
+        <a href="#" class="navigation__link">
+          Dm.
+        </a>
+      </div>
       <nav class="navigation__nav">
         <button class="navigation__btn">
           <i class="navigation__img-open fa-solid fa-bars"></i>
@@ -39,22 +43,22 @@
             />
           </button>
           <div class="navigation__item">
-            <a href="#" class="navigation__link">
+            <a href="#section-about" class="navigation__link">
               <span class="navigation__link--number">1.</span>About
             </a>
           </div>
           <div class="navigation__item">
-            <a href="#" class="navigation__link">
+            <a href="#section-skills" class="navigation__link">
               <span class="navigation__link--number">2.</span>Skills
             </a>
           </div>
           <div class="navigation__item">
-            <a href="#" class="navigation__link">
+            <a href="#section-projects" class="navigation__link">
               <span class="navigation__link--number">3.</span>Projects
             </a>
           </div>
           <div class="navigation__item">
-            <a href="#" class="navigation__link">
+            <a href="#section-contact" class="navigation__link">
               <span class="navigation__link--number">4.</span>Contact
             </a>
           </div>
@@ -84,13 +88,17 @@
         </p>
       </div>
       <div class="header__buttons">
-        <a href="#" class="btn btn__primary">Contact me</a>
-        <a href="#" class="btn btn__tertiary">Scroll Down </a>
+        <a href="#" class="btn btn__primary">Contact me 
+          <i class="btn__icon fa-solid fa-right-long"></i>
+        </a>
+        <a href="#" class="btn btn__tertiary">Scroll Down 
+          <img src="img/down-arrow.png" alt="Down icon" class="btn__icon btn__icon-animated" >
+        </a>
       </div>
     </header>
 
     <main class="main">
-      <section class="section-about">
+      <section id="section-about" class="section-about">
         <div class="about grid grid--2-cols1">
           <div class="about__content">
             <h2 class="heading-secondary u-margin-bottom-2">
@@ -101,16 +109,14 @@
               </div>
             </h2>
             <p class="paragraph u-margin-bottom-2">
-              I'm a success-driven, determined Web developer. I have experience
-              using HTML Sass Javascript and PHP to build accessible
-              component-based web pages and systems.<br />
-              Ability to deliver quality results while collaborating in rapidly
-              changing work environments and team compositions.<br />
-              A passionate person willing to learn more technologies to become a
-              better developer than i was yesterday. So determined and result
-              orietend.
+              I'm a success-driven, determined Web developer. I have experience using HTML, CSS, SASS and Javascript  to build accessible component-based web pages and systems.<br>
+              A passionate person willing to learn more technologies to become a better developer than i was yesterday. So determined and result orietend.
             </p>
-            <a href="#" class="btn btn__secondary">Download CV </a>
+            <a href="#" class="btn btn__secondary">
+              <span class="btn__secondary--text">Download CV</span>
+              <i class="btn__icon fa-solid fa-cloud-arrow-down"></i>
+              
+            </a>
           </div>
           <div class="about__image-box">
             <div class="about__outline"></div>
@@ -120,7 +126,7 @@
           </div>
         </div>
       </section>
-      <section class="section-skills">
+      <section id="section-skills" class="section-skills">
         <h2 class="heading-secondary u-margin-bottom-2">
           <span class="heading-secondary--sub">02 . </span>
           <div class="heading-secondary--main">
@@ -169,7 +175,7 @@
         </div>
       </section>
 
-      <section class="section-projects">
+      <section id="section-projects" class="section-projects">
         <h2 class="heading-secondary u-margin-bottom-2">
           <span class="heading-secondary--sub">03 . </span>
           <div class="heading-secondary--main">
@@ -357,7 +363,7 @@
       </section>
 
 
-      <section class="section-contact">
+      <section id="section-contact" class="section-contact">
         <h2 class="heading-secondary u-margin-bottom-2">
           <span class="heading-secondary--sub">04 . </span>
           <div class="heading-secondary--main">

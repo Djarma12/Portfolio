@@ -35,3 +35,37 @@
     transform: translate(-50%, -120%);
   }
 }
+
+@keyframes arrowUpDown {
+  0% {
+    transform: translateY(-0.26rem);
+  }
+
+  50% {
+    transform: translateY(0.26rem);
+  }
+
+  100% {
+    transform: translateY(-0.26rem);
+  }
+}
+
+@keyframes downNaw {
+  0% {
+    transform: translateY(-9rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// @keyframes upNaw {
+//   0% {
+//     transform: translateY(0);
+//   }
+
+//   100% {
+//     transform: translateY(-9rem);
+//   }
+// }

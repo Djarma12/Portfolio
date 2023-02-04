@@ -54,3 +54,10 @@ ORDER: Base + typography > general layout + grid > page layout > components
     }
   }
 }
+
+@mixin centerText {
+  position: relative;
+  top: 50%;
+  // left: 50%;
+  transform: translateY(-50%);
+}
