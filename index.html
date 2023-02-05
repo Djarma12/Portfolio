@@ -455,14 +455,22 @@
                 placeholder="Ente your Email"
                 required
               />
+              <label for="mail" class="form__label">Mail</label>
             </div>
             <div class="form__group">
               <textarea class="form__element form__element--textarea" type="text" id="message" placeholder="Enter your message" required></textarea>
+              <label for="message" class="form__label">Message</label>
             </div>
             <div class="form__group">
               <button type="submit" id="btn" class="btn btn__form">Send Email</button>
             </div>
           </form>
+
+          <div class="successful">
+            <div class="successful__text heading heading-primary heading-primary--sub">You have successfully sent a message, you can expect a reply as soon as possible.</div>
+            <img class="successful__img" src="img/successful-send-message.png" alt="Checked">
+          </div>
+
         </div>
       </section>
     </main>
@@ -472,6 +480,12 @@
         Developed By DusanMadjar | 2023
       </p>
     </footer>
+
+    <!-- /////////////////////////////////////////////////
+      CONTENT WITH ABSOLUTE POSITION
+      /////////////////////////////////////////////////
+      ELEMENT FROM THE SIDES THAT ARE FIXED
+     -->
     
     <div class="fixed-elements">
       <div class="fixed-elements__left">
@@ -504,11 +518,21 @@
         </div>
       </div>
 
+      <!-- /////////////////////////////////////////////////
+      ELEMENT FROM THE SIDES THAT ARE FIXED -->
+      <div class="popup">
+        <div class="popup__track">
+
+        </div>
+        <div class="pupup__content">
+          
+        </div>
+      </div>
+
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
     ></script>
-
     <script type="text/javascript">
       emailjs.init("ldXcDX38RU44_oqbW");
     </script>

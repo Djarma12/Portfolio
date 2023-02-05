@@ -74,6 +74,14 @@ ORDER: Base + typography > general layout + grid > page layout > components
   100% {
     transform: translateY(0); } }
 
+@keyframes scaleContent {
+  0% {
+    transform: scale(0); }
+  60% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+
 *,
 *::after,
 *::before {
@@ -290,11 +298,11 @@ body {
     font-size: 1.6rem;
     font-weight: 600;
     width: 100%;
-    padding: 1.5rem 2rem;
+    padding: 1.7rem 4.6rem 1.6rem 2rem;
     border-radius: 0.7rem;
     background-color: var(--formColor);
     border-bottom: 2.2px solid transparent;
-    border: 1.6px solid var(--secondaryColor);
+    border: 1px solid var(--secondaryColor);
     outline: none;
     transition: all 0.3s; }
     .form__element:hover {
@@ -310,23 +318,39 @@ body {
     .form__element::-webkit-input-placeholder {
       color: var(--secondaryColor); }
     .form__element--textarea {
+      padding-top: 2rem;
       font-size: 1.6rem;
       height: 14rem;
       resize: none; }
-  .form__element:focus .form__label {
-    top: 5rem; }
-  .form__element--input:placeholder-shown + .form__label {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-4rem); }
   .form__label {
     display: inline-block;
-    color: var(--secondaryColor);
+    font-size: 1.1rem;
+    color: var(--textColor);
     font-weight: 800;
     margin-left: 2rem;
     position: absolute;
-    top: 0;
-    left: 0; }
+    top: 4.8px;
+    right: 1.8rem;
+    letter-spacing: 0.7px; }
+  .form__element--input:placeholder-shown + .form__label,
+  .form__element--textarea:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem); }
+
+.successful {
+  display: none;
+  animation: 0.3s scaleContent ease-out; }
+  .successful__text {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-inline: 1.4rem; }
+  .successful__img {
+    display: block;
+    width: 20rem;
+    height: 20rem;
+    margin-inline: auto; }
 
 .fixed-elements {
   color: var(--secondaryColor); }
@@ -731,4 +755,5 @@ body {
   color: var(--paragraphColor);
   letter-spacing: 0.3px;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  box-shadow: 0 -1.8rem 3rem rgba(0, 0, 0, 0.1); }

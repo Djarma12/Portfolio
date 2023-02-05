@@ -1,3 +1,4 @@
+// For animation below section name
 @keyframes moveInRight {
   from {
     transform: translateX(0);
@@ -8,6 +9,7 @@
   }
 }
 
+// For opening mobile navigation
 @keyframes moveMobileNavOpen {
   0% {
     transform: translate(-50%, -120%);
@@ -36,6 +38,7 @@
   }
 }
 
+// Animation is used in header next to "Scroll Down" text
 @keyframes arrowUpDown {
   0% {
     transform: translateY(-0.26rem);
@@ -50,6 +53,7 @@
   }
 }
 
+// For navigation, it used with observer
 @keyframes downNaw {
   0% {
     transform: translateY(-9rem);
@@ -60,12 +64,17 @@
   }
 }
 
-// @keyframes upNaw {
-//   0% {
-//     transform: translateY(0);
-//   }
+// For scale text after message is successed sent
+@keyframes scaleContent {
+  0% {
+    transform: scale(0);
+  }
 
-//   100% {
-//     transform: translateY(-9rem);
-//   }
-// }
+  60% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
