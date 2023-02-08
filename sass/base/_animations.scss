@@ -78,3 +78,14 @@
     transform: scale(1);
   }
 }
+
+// For popup
+@keyframes displayPopup {
+  0% {
+    transform: translate(-50%, -10rem);
+  }
+
+  100% {
+    transform: translate(-50%, 0);
+  }
+}

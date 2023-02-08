@@ -1,0 +1,54 @@
+.popup {
+  display: none;
+  width: 35rem;
+  position: fixed;
+  top: 2.6%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--projectCardColor);
+  z-index: 1000;
+  font-size: 1.6rem;
+  border: 1px solid var(--primaryColor);
+  border-radius: 1.6rem;
+  overflow: hidden;
+  animation: displayPopup 0.2s;
+
+  #popup-name,
+  #popup-email,
+  #popup-message,
+  .popup__content-error {
+    display: none;
+  }
+
+  &__track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.7rem;
+    background-color: var(--BgColor);
+
+    &--logo {
+      font-size: 1.9rem;
+    }
+  }
+
+  &__content {
+    padding: 0 3rem;
+    min-height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-error {
+      font-size: 1.6rem;
+      margin: 2rem 5rem;
+    }
+  }
+
+  &__text {
+    &--mail {
+      color: var(--primaryColor);
+      text-decoration: none;
+    }
+  }
+}

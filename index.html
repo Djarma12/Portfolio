@@ -443,7 +443,6 @@
                 class="form__element form__element--input"
                 type="text"
                 placeholder="Ente your Name"
-                required="true"
               />
               <label for="name" class="form__label">Name</label>
             </div>
@@ -453,12 +452,11 @@
                 class="form__element form__element--input"
                 type="email"
                 placeholder="Ente your Email"
-                required
               />
               <label for="mail" class="form__label">Mail</label>
             </div>
             <div class="form__group">
-              <textarea class="form__element form__element--textarea" type="text" id="message" placeholder="Enter your message" required></textarea>
+              <textarea class="form__element form__element--textarea" type="text" id="message" placeholder="Enter your message"></textarea>
               <label for="message" class="form__label">Message</label>
             </div>
             <div class="form__group">
@@ -522,10 +520,43 @@
       ELEMENT FROM THE SIDES THAT ARE FIXED -->
       <div class="popup">
         <div class="popup__track">
-
+          <span class="popup__track--logo">Dm.</span>
+          <button class="btn btn__popup">
+            <img
+              src="img/close.png"
+              alt="Navigation btn"
+              class="btn__popup--img"
+            />
+          </button>
         </div>
-        <div class="pupup__content">
-          
+        <div id="popup-name" class="popup__content">
+          <p class="popup__text">
+            Write the name in form !
+          </p>
+        </div>
+        
+        <div id="popup-email" class="popup__content">
+          <p class="popup__text">
+            Write a valid email address in form !
+          </p>
+        </div>
+
+        <div id="popup-message" class="popup__content">
+          <p class="popup__text">
+            Write a message in the form !
+          </p>
+        </div>
+
+        <div id="popup-error" class="popup__content popup__content-error">
+          <p class="popup__text ">
+            There were technical problems. 
+            <span class="popup__text--error">
+             <!-- JS ERROR -->
+            </span>
+            Please contact us directly by email at 
+            <a class="popup__text--mail" href="mailto:madjardusan@gmail.com">madjardusan@gmail.com</a>
+            .
+          </p>
         </div>
       </div>
 
