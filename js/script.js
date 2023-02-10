@@ -5,26 +5,9 @@ const navigation = document.querySelector(".navigation");
 
 navigation.addEventListener("click", function (e) {
   e.preventDefault();
-
   if (e.target.closest(".navigation__btn")) {
     navigation.classList.toggle("active");
-    // console.log(mobileNav);.style.animation = "0.325s moveMobileNavClose ease-out";
-    // mobileNav.style.animation = "0.325s moveMobileNavClose ease-out";
   }
-
-  // if (e.target.closest(".navigation__btn-open")) {
-  //   // const mobileNav = document.querySelector(".active");
-  //   let a = document.querySelector(".navigation__list");
-  //   console.log(a);
-  //   a.style.animation = "0.325s moveMobileNavClose ease-out";
-  // }
-
-  // if (e.target.closest(".navigation__btn-close")) {
-  //   // const mobileNav = document.querySelector(".active");
-  //   let a = document.querySelector(".navigation__list");
-  //   console.log(a);
-  //   a.style.animation = "0.325s moveMobileNavOpen ease-out";
-  // }
 });
 
 ///////////////////////////////////////////////
@@ -43,8 +26,6 @@ const observer = new IntersectionObserver(
       document.body.classList.remove("sticky");
       document.body.classList.add("nosticky");
     }
-
-    // if (ent.isIntersecting) document.body.classList.remove("sticky");
   },
   {
     root: null,
@@ -55,8 +36,10 @@ const observer = new IntersectionObserver(
 observer.observe(header);
 
 ////////////////////////////////////////////
+const allLinks = Array.from(document.querySelectorAll(".navigation__link"));
+const btnHeader = document.querySelector(".header__buttons").children;
+allLinks.push(...btnHeader);
 
-const allLinks = document.querySelectorAll("a:link");
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
     e.preventDefault();

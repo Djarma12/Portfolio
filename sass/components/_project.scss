@@ -6,6 +6,15 @@
     padding: 2.4rem 1.2rem;
     border-radius: 1.6rem;
     box-shadow: 0 1.8rem 3rem $shadow-cards;
+    transition: 0.3s all;
+    border-bottom: 2px solid transparent;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-4px);
+      border-bottom: 2px solid var(--primaryColor);
+      box-shadow: 0 1.2rem 1.6rem $shadow-cards--hover;
+    }
   }
 
   &__link {
@@ -75,7 +84,7 @@
   &__text {
     font-size: 1.8rem;
     margin-bottom: 1.4rem;
-    min-height: 10rem;
+    min-height: 12rem;
   }
 
   &__technologies {
@@ -86,6 +95,10 @@
     display: flex;
     justify-content: end;
     gap: 1rem;
+
+    position: absolute;
+    right: 1rem;
+    bottom: 1.8rem;
   }
 
   &__technology {

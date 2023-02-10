@@ -1,9 +1,10 @@
 // Colors
 :root {
   --primaryColor: #00eaff;
+  --primaryColorHoverBtn: #00daee;
   --primaryHover: #08b9c9;
   --secondaryColor: #96a2bc;
-  --paragraphColor: #7f7faf;
+  --paragraphColor: #a9a9c9;
   --BgColor: #031a30;
   --formColor: #020f1d;
   --projectCardColor: #072340;
@@ -22,4 +23,7 @@ $gutter-horizontal: 6rem;
 
 // SHADOW
 $shadow-cards: rgba(0, 0, 0, 0.15);
+$shadow-pulsate: rgba(0, 0, 0, 0.3);
+$shadow-cards--hover: rgba(8, 185, 201, 0.1);
+$shadow-cards--hover2: rgba(8, 185, 201, 0.15);
 $shadow-footer: rgba(0, 0, 0, 0.1);

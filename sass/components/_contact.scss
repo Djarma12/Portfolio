@@ -31,24 +31,42 @@
 
   &__link {
     display: inline-block;
-    color: var(--paragraphColor);
     text-decoration: none;
-    font-size: 1.4rem;
+
+    &-sub {
+      color: var(--paragraphColor);
+      font-size: 1.4rem;
+    }
+
+    &-main {
+      color: var(--primaryColor);
+      transition: all 0.3s;
+
+      &--text {
+        font-size: 1.6rem;
+        color: inherit;
+      }
+
+      &--icon {
+        color: inherit;
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        transform: scale(1.07);
+      }
+
+      &:active,
+      &:focus {
+        animation: pulsate 1s infinite;
+      }
+    }
   }
 
   &__message {
-    color: var(--primaryColor);
     display: flex;
     align-items: center;
     gap: 0.6rem;
-
-    &--text {
-      font-size: 1.6rem;
-    }
-
-    &--icon {
-      font-size: 1.2rem;
-    }
   }
 }
 
@@ -85,10 +103,7 @@
       font-size: 1.7rem;
       transform: translateY(-0.2rem) scale(1);
       font-weight: inherit;
-      border-bottom: 2.4px solid var(--primaryColor);
-      &:invalid {
-        border-bottom: 2px solid red;
-      }
+      border-bottom: 1px solid red;
     }
 
     &::-webkit-input-placeholder {
@@ -108,7 +123,6 @@
 
   &__label {
     display: inline-block;
-    font-size: 1.1rem;
     color: var(--textColor);
     font-weight: 800;
     margin-left: 2rem;

@@ -4,6 +4,16 @@
   text-decoration: none;
   border: none;
   box-shadow: 0 2rem 3rem $shadow-cards;
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 0 1rem 3rem $shadow-cards--hover2;
+    transform: translateY(-4px);
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
 
   &__primary,
   &__secondary,
@@ -16,6 +26,15 @@
     );
     letter-spacing: 0.2px;
     border-radius: 3px;
+    transition: all 0.3s;
+
+    &:hover {
+      background: linear-gradient(
+        to right bottom,
+        var(--primaryColorHoverBtn) 60%,
+        var(--primaryHover)
+      );
+    }
   }
 
   &__primary {
@@ -59,6 +78,24 @@
 
     &-animated {
       animation: arrowUpDown 0.65s infinite;
+    }
+  }
+
+  &__popup {
+    display: block;
+    border-radius: 50%;
+    background-color: var(--textColor);
+    width: 1.8rem;
+    height: 1.8rem;
+    transition: all 0.3s;
+
+    &--img {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    &:hover {
+      transform: none;
     }
   }
 }

@@ -1,7 +1,4 @@
 "use strict";
-// import isEmail from "./validator/lib/isEmail.js";
-// const isEmail = require("validator/lib/isEmail");
-// console.log(isEmail("test@example.com")); // true
 const btnClosePopup = document.querySelector(".btn__popup");
 const popup = document.querySelector(".popup");
 
@@ -20,6 +17,13 @@ const displayPopup = function (str, e) {
   return e.preventDefault();
 };
 
+const validateFormEl = function (input, trueFalse) {
+  if (trueFalse) {
+    input.style.borderBottom = "2px solid red";
+  } else {
+    input.style.borderBottom = "2.4px solid #00eaff";
+  }
+};
 //////////////////////////////////////////
 // TESTING MAIL
 form.addEventListener("submit", function (e) {
@@ -69,24 +73,10 @@ btnClosePopup.addEventListener("click", function (e) {
   this.closest(".popup").style.display = "none";
 });
 
-// const email = form.querySelector("#mail").value;
-// email.addEventListener("input", function () {
-//   if (email.value === "") {
-//     this.style.borderBottom = "2px solid red";
-//   } else {
-//     this.style.borderBottom = "2.4px solid #00eaff";
-//   }
-// });
+//////////////////////////////////////////
+// VALIDATION OF USER TYPES USING BORDER BOTTOM
+
 const input = document.querySelectorAll(".form__element");
-
-const validateFormEl = function (input, trueFalse) {
-  if (trueFalse) {
-    input.style.borderBottom = "2px solid red";
-  } else {
-    input.style.borderBottom = "2.4px solid #00eaff";
-  }
-};
-
 input.forEach((input) => {
   input.addEventListener("keyup", function () {
     console.log(input.id);

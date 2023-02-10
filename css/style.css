@@ -30,9 +30,10 @@ ORDER: Base + typography > general layout + grid > page layout > components
 */
 :root {
   --primaryColor: #00eaff;
+  --primaryColorHoverBtn: #00daee;
   --primaryHover: #08b9c9;
   --secondaryColor: #96a2bc;
-  --paragraphColor: #7f7faf;
+  --paragraphColor: #a9a9c9;
   --BgColor: #031a30;
   --formColor: #020f1d;
   --projectCardColor: #072340;
@@ -87,6 +88,25 @@ ORDER: Base + typography > general layout + grid > page layout > components
     transform: translate(-50%, -10rem); }
   100% {
     transform: translate(-50%, 0); } }
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0) scaleX(0.7); }
+  50% {
+    transform: translateX(7.5rem) scaleX(1.3); }
+  100% {
+    transform: translateX(12rem) scaleX(1); } }
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0.8rem 1.8rem transparent; }
+  50% {
+    transform: scale(1.07);
+    box-shadow: 0 0.8rem 1.8rem rgba(0, 0, 0, 0.3); }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0.8rem 1.8rem transparent; } }
 
 *,
 *::after,
@@ -184,8 +204,8 @@ body {
 
 .paragraph {
   font-size: 2rem;
-  color: var(--secondaryColor);
-  font-weight: 300;
+  color: var(--paragraphColor);
+  font-weight: 500;
   letter-spacing: 0.87px;
   line-height: 1.3; }
 
@@ -221,12 +241,21 @@ body {
   display: inline-block;
   text-decoration: none;
   border: none;
-  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.15); }
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.15);
+  transition: all 0.2s; }
+  .btn:hover {
+    box-shadow: 0 1rem 3rem rgba(8, 185, 201, 0.15);
+    transform: translateY(-4px); }
+  .btn:active {
+    transform: translateY(-2px); }
   .btn__primary, .btn__secondary, .btn__form {
     color: var(--BgColor);
     background: linear-gradient(to right bottom, var(--primaryColor) 30%, var(--primaryHover));
     letter-spacing: 0.2px;
-    border-radius: 3px; }
+    border-radius: 3px;
+    transition: all 0.3s; }
+    .btn__primary:hover, .btn__secondary:hover, .btn__form:hover {
+      background: linear-gradient(to right bottom, var(--primaryColorHoverBtn) 60%, var(--primaryHover)); }
   .btn__primary {
     font-size: 2.2rem;
     padding: 1.6rem 3.2rem; }
@@ -262,10 +291,13 @@ body {
     border-radius: 50%;
     background-color: var(--textColor);
     width: 1.8rem;
-    height: 1.8rem; }
+    height: 1.8rem;
+    transition: all 0.3s; }
     .btn__popup--img {
       width: 1rem;
       height: 1rem; }
+    .btn__popup:hover {
+      transform: none; }
 
 .contact {
   justify-items: center;
@@ -288,18 +320,27 @@ body {
     color: var(--primaryColor); }
   .contact__link {
     display: inline-block;
-    color: var(--paragraphColor);
-    text-decoration: none;
-    font-size: 1.4rem; }
+    text-decoration: none; }
+    .contact__link-sub {
+      color: var(--paragraphColor);
+      font-size: 1.4rem; }
+    .contact__link-main {
+      color: var(--primaryColor);
+      transition: all 0.3s; }
+      .contact__link-main--text {
+        font-size: 1.6rem;
+        color: inherit; }
+      .contact__link-main--icon {
+        color: inherit;
+        font-size: 1.2rem; }
+      .contact__link-main:hover {
+        transform: scale(1.07); }
+      .contact__link-main:active, .contact__link-main:focus {
+        animation: pulsate 1s infinite; }
   .contact__message {
-    color: var(--primaryColor);
     display: flex;
     align-items: center;
     gap: 0.6rem; }
-    .contact__message--text {
-      font-size: 1.6rem; }
-    .contact__message--icon {
-      font-size: 1.2rem; }
 
 .form {
   width: 100%; }
@@ -384,7 +425,12 @@ body {
   .fixed-elements__img-github {
     display: inline-block;
     height: 3rem;
-    width: 3rem; }
+    width: 3rem;
+    transition: all 0.3s; }
+    .fixed-elements__img-github:hover {
+      transform: scale(1.1); }
+      .fixed-elements__img-github:hover::before {
+        background: var(--primaryHover); }
     .fixed-elements__img-github::before {
       content: "";
       display: inline-block;
@@ -407,7 +453,11 @@ body {
     -webkit-mask-image: url(../../img/frontend-mentor-logo.png);
     mask-image: url(../../img/frontend-mentor-logo.png);
     -webkit-mask-size: cover;
-    mask-size: cover; }
+    mask-size: cover;
+    transition: all 0.3s; }
+    .fixed-elements__img-frontendmentor:hover {
+      transform: scale(1.1);
+      background: var(--primaryHover); }
   .fixed-elements__right {
     position: fixed;
     bottom: 0;
@@ -425,7 +475,12 @@ body {
       transform-origin: 100% 0%;
       transform: rotate(90deg) translateX(-5rem);
       width: auto;
-      height: auto; }
+      height: auto;
+      transition: all 0.3s; }
+      .fixed-elements__right-mail:hover {
+        transform: rotate(90deg) translateX(-4.5rem) scale(1.08); }
+        .fixed-elements__right-mail:hover::after {
+          color: var(--primaryHover); }
       .fixed-elements__right-mail::after {
         content: "madjardusan@gmail.com";
         display: inline-block;
@@ -433,8 +488,9 @@ body {
         color: var(--secondaryColor);
         font-size: 1.7rem;
         position: absolute;
-        right: 0;
-        top: -50%; }
+        right: -2rem;
+        top: -1rem;
+        transition: all 0.3s; }
   .fixed-elements__line {
     background-color: var(--secondaryColor);
     width: 1px;
@@ -486,7 +542,14 @@ body {
   background-color: var(--projectCardColor);
   padding: 2.4rem 1.2rem;
   border-radius: 1.6rem;
-  box-shadow: 0 1.8rem 3rem rgba(0, 0, 0, 0.15); }
+  box-shadow: 0 1.8rem 3rem rgba(0, 0, 0, 0.15);
+  transition: 0.3s all;
+  border-bottom: 2px solid transparent;
+  position: relative; }
+  .project__card:hover {
+    transform: translateY(-4px);
+    border-bottom: 2px solid var(--primaryColor);
+    box-shadow: 0 1.2rem 1.6rem rgba(8, 185, 201, 0.1); }
 
 .project__link {
   display: flex;
@@ -543,14 +606,17 @@ body {
 .project__text {
   font-size: 1.8rem;
   margin-bottom: 1.4rem;
-  min-height: 10rem; }
+  min-height: 12rem; }
 
 .project__technologies {
   font-size: 1.8rem;
   margin-right: 1.2rem;
   display: flex;
   justify-content: end;
-  gap: 1rem; }
+  gap: 1rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 1.8rem; }
 
 .project__technology {
   display: inline-block; }
@@ -762,6 +828,7 @@ body {
         transform: translate(-50%, -120%);
         transition: translate 0.3s;
         opacity: 0;
+        z-index: 1000;
         display: flex;
         gap: 2rem;
         justify-content: center;
@@ -770,12 +837,69 @@ body {
   .navigation__item {
     padding: 0.8rem 1.6rem; }
   .navigation__link {
+    display: inline-block;
     color: inherit;
     text-decoration: none;
-    font-weight: 600; }
+    font-weight: 600;
+    padding: 0.9rem 0;
+    transition: all 0.3s linear;
+    position: relative;
+    overflow: hidden; }
     .navigation__link--number {
       font-weight: 300;
       color: var(--primaryColor); }
+    .navigation__link::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: -3rem;
+      width: 20%;
+      height: 3px;
+      background: var(--primaryColor);
+      transition: all 0.5s linear; }
+    .navigation__link:hover {
+      color: var(--primaryColor); }
+      .navigation__link:hover::before {
+        transform: translateX(12rem); }
+  .navigation__link-download {
+    position: relative;
+    color: var(--primaryColor);
+    padding: 0.9rem 2.4rem;
+    margin-left: -1rem;
+    border: 2px solid var(--primaryColor);
+    border-radius: 1px;
+    background-color: var(--formColor);
+    transition: all 0.2s;
+    z-index: 1000;
+    overflow-x: hidden; }
+    .navigation__link-download::before {
+      content: "";
+      z-index: -10;
+      background-color: var(--projectCardColor);
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.325s ease-in; }
+    .navigation__link-download::after {
+      content: "";
+      z-index: -7;
+      background-color: var(--primaryColor);
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: -2rem;
+      width: 2rem;
+      height: 100%; }
+    .navigation__link-download:hover {
+      border-color: transparent; }
+      .navigation__link-download:hover::before {
+        transform: translateX(100%); }
+      .navigation__link-download:hover::after {
+        animation: moveRight 0.275s linear; }
 
 .active .navigation__list {
   animation: 0.325s moveMobileNavOpen ease-out;
