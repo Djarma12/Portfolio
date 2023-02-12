@@ -1,23 +1,36 @@
 .header {
   width: 60%;
-  margin-block: 9rem 11rem;
+  margin: 8rem 11rem 9rem 11rem;
   margin-inline: auto;
+  @include respond(phone) {
+    width: 85%;
+  }
 
   &__text-box {
     width: 70%;
     margin-bottom: 2rem;
+
+    @include respond(phone) {
+      width: 100%;
+    }
   }
 
   &__text-1 {
     font-size: 3.5rem;
     color: var(--secondaryColor);
     margin-bottom: 2.8rem;
+    @include respond(phone) {
+      font-size: 3.2rem;
+    }
   }
 
   &__text-2 {
     font-size: 3.1rem;
     font-weight: 300;
     color: var(--paragraphColor);
+    @include respond(phone) {
+      font-size: 2.8rem;
+    }
   }
 
   &__buttons {

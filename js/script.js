@@ -20,11 +20,11 @@ const observer = new IntersectionObserver(
     console.log(entries[0]);
     if (!ent.isIntersecting) {
       document.body.classList.add("sticky");
-      document.body.classList.remove("nosticky");
+      // document.body.classList.remove("nosticky");
     }
     if (ent.isIntersecting) {
       document.body.classList.remove("sticky");
-      document.body.classList.add("nosticky");
+      // document.body.classList.add("nosticky");
     }
   },
   {

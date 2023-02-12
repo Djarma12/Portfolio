@@ -46,6 +46,13 @@
     font-size: 1.8rem;
     padding: 1.4rem 3rem;
 
+    @include respond(phone) {
+      margin-bottom: 3rem;
+      // position: relative;
+      // left: 50%;
+      // transform: translateX(-50%);
+    }
+
     &--text {
       margin-right: 0.6rem;
     }

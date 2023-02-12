@@ -17,12 +17,18 @@ body {
       color: var(--primaryColor);
       font-size: 3rem;
       letter-spacing: 1.7px;
+      @include respond(phone) {
+        font-size: 2.8rem;
+      }
     }
 
     &--main {
       display: inline-block;
       font-size: 7.5rem;
       letter-spacing: 0.2px;
+      @include respond(phone) {
+        font-size: 6.8rem;
+      }
     }
   }
 
@@ -56,11 +62,6 @@ body {
   }
 }
 
-// @function percentage-to-rem($percentage, $base-font-size: 16px) {
-//   $rem-value: $percentage / 100 * $base-font-size;
-//   @return #{$rem-value}rem;
-// }
-
 .underline {
   display: block;
   position: absolute;
@@ -88,7 +89,7 @@ body {
 }
 
 .paragraph {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--paragraphColor);
   font-weight: 500;
   letter-spacing: 0.87px;

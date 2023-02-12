@@ -11,26 +11,36 @@
     gap: $gutter-vertical-smallest;
   }
 
-  @include respond(tab-port) {
+  @include respond(phone) {
     gap: 0;
     row-gap: $gutter-vertical-small;
     padding: 0 3rem;
   }
 
-  @include respond(tab-port) {
-    grid-template-columns: 1fr !important;
-  }
-
   &--2-cols {
     grid-template-columns: repeat(2, 1fr);
+    @include respond(phone) {
+      grid-template-columns: 1fr !important;
+    }
+  }
 
-    &1 {
-      grid-template-columns: 1.3fr 0.9fr;
+  &--2-cols1 {
+    grid-template-columns: 1.3fr 0.9fr;
+
+    @include respond(tab-land) {
+      grid-template-columns: 1fr !important;
     }
   }
 
   &--3-cols {
     grid-template-columns: repeat(3, 1fr);
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+    @include respond(tab-port) {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
   }
 
   &--4-cols {
@@ -39,13 +49,17 @@
 
   .coll-1-of-3 {
     grid-column: 1/3;
+
+    @include respond(phone) {
+      grid-column: 1/2;
+    }
   }
 
-  .coll-2-of-4 {
-    grid-column: 3/5;
-  }
+  // .coll-2-of-4 {
+  //   grid-column: 3/5;
+  // }
 
-  .coll-3-of-4 {
-    grid-column: 2/5;
-  }
+  // .coll-3-of-4 {
+  //   grid-column: 2/5;
+  // }
 }

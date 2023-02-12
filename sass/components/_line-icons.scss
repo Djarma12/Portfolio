@@ -1,6 +1,9 @@
 ////////////////////////////////////////////////
 .fixed-elements {
   color: var(--secondaryColor);
+  @include respond(phone) {
+    display: none;
+  }
 
   &__left {
     position: fixed;
