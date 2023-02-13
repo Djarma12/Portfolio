@@ -59,6 +59,10 @@ body {
     font-size: 1.8rem;
     color: var(--textColor);
     font-weight: 600;
+
+    @include respond(phone) {
+      font-size: 2rem;
+    }
   }
 }
 

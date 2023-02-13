@@ -185,6 +185,9 @@ body {
   font-size: 1.8rem;
   color: var(--textColor);
   font-weight: 600; }
+  @media only screen and (max-width: 37.5rem) {
+    .heading-fourth {
+      font-size: 2rem; } }
 
 .underline {
   display: block;
@@ -226,9 +229,6 @@ body {
 
 .u-margin-bottom-2 {
   margin-bottom: 3.2rem !important; }
-  @media only screen and (max-width: 56.2em) {
-    .u-margin-bottom-2 {
-      margin-bottom: 3rem !important; } }
 
 .u-margin-bottom-3 {
   margin-bottom: 5rem !important; }
@@ -322,9 +322,17 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0.9rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .contact__text {
+        padding: 2.6rem 3rem;
+        width: 28rem;
+        gap: 1.5rem; } }
   .contact__icons {
     display: inline-block;
     font-size: 2.2rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .contact__icons {
+        font-size: 2.6rem; } }
   .contact__icon {
     color: var(--primaryColor); }
   .contact__link {
@@ -333,15 +341,24 @@ body {
     .contact__link-sub {
       color: var(--paragraphColor);
       font-size: 1.4rem; }
+      @media only screen and (max-width: 37.5rem) {
+        .contact__link-sub {
+          font-size: 1.6rem; } }
     .contact__link-main {
       color: var(--primaryColor);
       transition: all 0.3s; }
       .contact__link-main--text {
         font-size: 1.6rem;
         color: inherit; }
+        @media only screen and (max-width: 37.5rem) {
+          .contact__link-main--text {
+            font-size: 1.8rem; } }
       .contact__link-main--icon {
         color: inherit;
         font-size: 1.2rem; }
+        @media only screen and (max-width: 37.5rem) {
+          .contact__link-main--icon {
+            font-size: 1.4rem; } }
       .contact__link-main:hover {
         transform: scale(1.07); }
       .contact__link-main:active, .contact__link-main:focus {
@@ -633,11 +650,17 @@ body {
   padding: 2rem 2.4rem; }
   .skills__box {
     padding: 0 2.4rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .skills__box {
+        padding: 0; } }
   .skills__name {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
     margin-bottom: 2.8rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .skills__name {
+        margin-bottom: 2.4rem; } }
     .skills__name--main {
       font-size: 2.4rem; }
     .skills__name--sub {
@@ -648,11 +671,21 @@ body {
     display: flex;
     gap: 1.6rem;
     margin-bottom: 2rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .skills__images {
+        margin-bottom: 1.8rem; } }
+    @media only screen and (max-width: 37.5rem) {
+      .skills__images {
+        gap: 1.2rem; } }
   .skills__img {
     display: inline-block;
     height: 4.8rem;
     width: 4.8rem;
     border-radius: 2px; }
+    @media only screen and (max-width: 37.5rem) {
+      .skills__img {
+        height: 4rem;
+        width: 4rem; } }
   .skills__text {
     font-size: 1.6rem;
     font-weight: 600;
@@ -736,7 +769,7 @@ body {
   @media only screen and (max-width: 37.5rem) {
     .grid {
       gap: 0;
-      row-gap: 3rem;
+      row-gap: 3.4rem;
       padding: 0 3rem; } }
   .grid--2-cols {
     grid-template-columns: repeat(2, 1fr); }
@@ -972,15 +1005,27 @@ body {
 
 .section-about {
   padding-block: 11rem; }
+  @media only screen and (max-width: 37.5rem) {
+    .section-about {
+      padding-block: 9rem; } }
 
 .section-skills {
   padding-block: 11rem 8rem; }
+  @media only screen and (max-width: 37.5rem) {
+    .section-skills {
+      padding-block: 9rem 7.6rem; } }
 
 .section-projects {
   padding-block: 11rem; }
+  @media only screen and (max-width: 37.5rem) {
+    .section-projects {
+      padding-block: 9rem; } }
 
 .section-contact {
   padding-block: 11rem; }
+  @media only screen and (max-width: 37.5rem) {
+    .section-contact {
+      padding-block: 9rem; } }
 
 .footer {
   padding-block: 1.8rem;

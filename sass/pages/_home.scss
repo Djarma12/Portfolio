@@ -14,18 +14,32 @@
 
 .section-about {
   padding-block: 11rem;
+  @include respond(phone) {
+    padding-block: 9rem;
+  }
 }
 
 .section-skills {
   padding-block: 11rem 8rem;
+
+  @include respond(phone) {
+    padding-block: 9rem 7.6rem;
+  }
 }
 
 .section-projects {
   padding-block: 11rem;
+
+  @include respond(phone) {
+    padding-block: 9rem;
+  }
 }
 
 .section-contact {
   padding-block: 11rem;
+  @include respond(phone) {
+    padding-block: 9rem;
+  }
 }
 
 .footer {

@@ -2,7 +2,9 @@
   width: 60%;
   margin: 8rem 11rem 9rem 11rem;
   margin-inline: auto;
+
   @include respond(phone) {
+    // margin-top: 7rem;
     width: 85%;
   }
 

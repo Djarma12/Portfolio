@@ -13,7 +13,7 @@
 
   @include respond(phone) {
     gap: 0;
-    row-gap: $gutter-vertical-small;
+    row-gap: $gutter-vertical-medium;
     padding: 0 3rem;
   }
 
