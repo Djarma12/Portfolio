@@ -688,7 +688,10 @@ body {
     display: inline-block;
     height: 4.8rem;
     width: 4.8rem;
-    border-radius: 2px; }
+    border-radius: 2px;
+    transition: all 0.3s; }
+    .skills__img:hover {
+      transform: scale(1.175); }
     @media only screen and (max-width: 37.5rem) {
       .skills__img {
         height: 4.2rem;
