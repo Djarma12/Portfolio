@@ -22,6 +22,7 @@
     <script defer type="module" src="js/contactForm.js"></script>
     <script defer src="js/liveChat.js"></script>
     <script defer src="js/script.js"></script>
+    <script defer src="js/lazyLoading.js"></script>
     <title>Dusan Madjar</title>
   </head>
   <body>
@@ -64,7 +65,7 @@
             </a>
           </div>
           <div class="navigation__item">
-            <a href="#" class="navigation__link navigation__link-download" download="Dusan Madjar"
+            <a href="img/CV.pdf" class="navigation__link navigation__link-download" download="Dusan Madjar.pdf"
               >Resume
             </a>
           </div>
@@ -118,7 +119,7 @@
                 I regularly participate in open-source projects and maintain a portfolio on GitHub, showcasing my mastery of HTML, CSS, JavaScript, and SASS.
             </p>
 
-            <a href="#" class="btn btn__secondary">
+            <a href="img/CV.pdf" class="btn btn__secondary" download="Dusan Madjar.pdf">
               <span class="btn__secondary--text">Download CV</span>
               <i class="btn__icon fa-solid fa-cloud-arrow-down"></i>             
             </a>
@@ -154,7 +155,7 @@
             </div>
 
             <p class="skills__text">
-              I will learning React and Git in the near future.
+              I will learning React in the near future.
             </p>
           </div>
 
@@ -165,12 +166,14 @@
             </div>
 
             <div class="skills__images">
-              <img
+              <img 
+                loading="lazy"
                 src="img/c-sharp.png"
                 alt="Skill image"
                 class="skills__img"
               />
-              <img src="img/github.png" alt="Skill image" class="skills__img" />
+              <img loading="lazy" src="img/git.png" alt="Skill image" class="skills__img" />
+              <img loading="lazy" src="img/github.png" alt="Skill image" class="skills__img" />
             </div>
 
             <p class="skills__text">
@@ -196,11 +199,17 @@
               </a>
             </div>
             <div class="project__img">
-              <img
-                src="img/rest-countries.png"
-                alt="Project image"
-                class="project__image"
-              />
+              <picture>
+                <source srcset="img/rest-countries.webp" type="image/webp" />
+                <source srcset="img/rest-countries.png" type="image/png" />
+  
+                <img
+                  loading="lazy"
+                  src="img/rest-countries.png"
+                  class="project__image"
+                  alt="Project image"
+                />
+              </picture>
             </div>
             <div class="project__content">
               <h3 class="heading-tertiary u-margin-bottom-08">
@@ -212,7 +221,7 @@
               <div class="project__technologies">
                 <span class="project__technology">HTML</span>
                 <span class="project__technology">CSS</span>
-                <span class="project__technology">JS</span>
+                <span class="project__technology">JS(OOP, API)</span>
               </div>
             </div>
           </div>
@@ -225,11 +234,16 @@
               </a>
             </div>
             <div class="project__img">
-              <img
-                src="img/natours.png"
-                alt="Project image"
-                class="project__image"
-              />
+              <picture>
+                <source srcset="img/natours.webp" type="image/webp" />
+                <source srcset="img/natours.png" type="image/png" />
+                <img
+                  loading="lazy"
+                  src="img/natours.png"
+                  class="project__image"
+                  alt="Project image"
+                />
+              </picture>
             </div>
             <div class="project__content">
               <h3 class="heading-tertiary u-margin-bottom-08">Natours</h3>
@@ -251,11 +265,16 @@
               </a>
             </div>
             <div class="project__img">
-              <img
-                src="img/social-network.png"
-                alt="Project image"
-                class="project__image"
-              />
+              <picture>
+                <source srcset="img/social-network.webp" type="image/webp" />
+                <source srcset="img/social-network.png" type="image/png" />
+                <img
+                  loading="lazy"
+                  src="img/social-network.png"
+                  class="project__image"
+                  alt="Project image"
+                />
+              </picture>
             </div>
             <div class="project__content">
               <h3 class="heading-tertiary u-margin-bottom-08">
@@ -269,7 +288,7 @@
               <div class="project__technologies">
                 <span class="project__technology">HTML</span>
                 <span class="project__technology">CSS</span>
-                <span class="project__technology">JS</span>
+                <span class="project__technology">JS(OOP, REST-API)</span>
               </div>
             </div>
           </div>
@@ -282,23 +301,28 @@
               </a>
             </div>
             <div class="project__img">
-              <img
-                src="img/forkify.png"
-                alt="Project image"
-                class="project__image"
-              />
+              <picture>
+                <source srcset="img/forkify.webp" type="image/webp" />
+                <source srcset="img/forkify.png" type="image/png" />
+                <img
+                  loading="lazy"
+                  src="img/forkify.png"
+                  class="project__image"
+                  alt="Project image"
+                />
+              </picture>
             </div>
             <div class="project__content">
               <h3 class="heading-tertiary u-margin-bottom-08">Forkify</h3>
               <p class="project__text">
-                This application provides a convenient and user-friendly way for
+                This app provides a convenient and user-friendly way for
                 users to search for new recipes, save their favorite ones, and
-                even share their own creations.
+                even share their own creations. 
               </p>
               <div class="project__technologies">
                 <span class="project__technology">HTML</span>
                 <span class="project__technology">CSS</span>
-                <span class="project__technology">JS</span>
+                <span class="project__technology">JS(MVC, OOP, REST-API)</span>
               </div>
             </div>
           </div>
@@ -311,20 +335,23 @@
               </a>
             </div>
             <div class="project__img">
-              <img
-                src="img/manage-landing-page.png"
-                alt="Project image"
-                class="project__image"
-              />
+              <picture>
+                <source srcset="img/manage-landing-page.webp" type="image/webp" />
+                <source srcset="img/manage-landing-page.png" type="image/png" />
+                <img
+                  loading="lazy"
+                  src="img/manage-landing-page.png"
+                  class="project__image"
+                  alt="Project image"
+                />
+              </picture>
             </div>
             <div class="project__content">
               <h3 class="heading-tertiary u-margin-bottom-08">
                 Manage landing page
               </h3>
               <p class="project__text">
-                This application provides a convenient and user-friendly way for
-                users to search for new recipes, save their favorite ones, and
-                even share their own creations.
+                This web page is built with HTML, CSS and JS, using the pixel perfect technique. It features optimal layout, statement slider, interactive elements.
               </p>
               <div class="project__technologies">
                 <span class="project__technology">HTML</span>
@@ -342,11 +369,16 @@
               </a>
             </div>
             <div class="project__img">
-              <img
-                src="img/trillo.png"
-                alt="Project image"
-                class="project__image"
-              />
+              <picture>
+                <source srcset="img/trillo.webp" type="image/webp" />
+                <source srcset="img/trillo.png" type="image/png" />
+                <img
+                  loading="lazy"
+                  src="img/trillo.png"
+                  class="project__image"
+                  alt="Project image"
+                />
+              </picture>
             </div>
             <div class="project__content">
               <h3 class="heading-tertiary u-margin-bottom-08">Trillo</h3>

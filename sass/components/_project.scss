@@ -90,17 +90,25 @@
   }
 
   &__technologies {
-    font-size: 1.8rem;
-    // color: var(--paragraphColor);
-    margin-right: 1.2rem;
+    font-size: 1.4rem;
+    // margin-right: 1.2rem;
 
     display: flex;
     justify-content: end;
-    gap: 1rem;
+    gap: 0.8rem;
 
     position: absolute;
-    right: 1rem;
+    right: 2.2rem;
     bottom: 1.8rem;
+
+    @include respond(tab-land) {
+      font-size: 1.8rem;
+      gap: 1rem;
+    }
+    @include respond(big-desktop) {
+      font-size: 1.8rem;
+      gap: 1rem;
+    }
   }
 
   &__technology {

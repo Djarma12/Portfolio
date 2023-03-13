@@ -3,7 +3,7 @@
   margin-inline: auto;
   padding-inline: 6rem;
 
-  @include respond(big-desktop) {
+  @include respond(tab-land) {
     padding-inline: 3rem;
   }
 
@@ -51,4 +51,9 @@
   width: 100%;
   text-align: center;
   box-shadow: 0 -1.8rem 3rem $shadow-footer;
+
+  @include respond(phone) {
+    padding-block: 1.7rem;
+    font-size: 1.4rem;
+  }
 }
