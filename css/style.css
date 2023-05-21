@@ -108,6 +108,23 @@ ORDER: Base + typography > general layout + grid > page layout > components
     transform: scale(1);
     box-shadow: 0 0.8rem 1.8rem transparent; } }
 
+@keyframes sectionAnimate {
+  0% {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateY(100%); }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0); } }
+
+@keyframes animateText {
+  40%,
+  60% {
+    left: calc(100% + 4px); }
+  100% {
+    left: 0%; } }
+
 *,
 *::after,
 *::before {
@@ -159,7 +176,23 @@ body {
   .heading-primary--main {
     display: inline-block;
     font-size: 7.5rem;
-    letter-spacing: 0.2px; }
+    letter-spacing: 0.2px;
+    position: relative;
+    overflow: hidden; }
+    .heading-primary--main::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--BgColor);
+      border-left: 2px solid var(--primaryHover);
+      animation: animateText 4s steps(12) infinite; }
+    @media only screen and (max-width: 56.2em) {
+      .heading-primary--main {
+        font-size: 6.2rem;
+        letter-spacing: 0.2px; } }
     @media only screen and (max-width: 37.5rem) {
       .heading-primary--main {
         font-size: 6.8rem; } }
@@ -241,6 +274,9 @@ body {
 
 .u-margin-top-huge {
   margin-top: 10rem !important; }
+
+.show {
+  animation: sectionAnimate 1.2s ease-out; }
 
 .btn {
   cursor: pointer;
@@ -440,10 +476,9 @@ body {
     position: fixed;
     display: flex;
     align-items: center;
-    flex-direction: column; }
-  .fixed-elements__left {
+    flex-direction: column;
     bottom: 0;
-    left: 7%;
+    left: 5%;
     display: flex;
     flex-direction: column;
     gap: 2rem; }
@@ -490,7 +525,7 @@ body {
   .fixed-elements__right {
     position: fixed;
     bottom: 0;
-    right: 7%;
+    right: 5%;
     display: flex;
     align-items: center;
     flex-direction: column; }
@@ -782,7 +817,7 @@ body {
       row-gap: 3.4rem; } }
   .grid--2-cols {
     grid-template-columns: repeat(2, 1fr); }
-    @media only screen and (max-width: 37.5rem) {
+    @media only screen and (max-width: 56.2em) {
       .grid--2-cols {
         grid-template-columns: 1fr !important; } }
   .grid--2-cols1 {
@@ -809,7 +844,11 @@ body {
 .header {
   width: 60%;
   margin: 8rem 11rem 9rem 11rem;
-  margin-inline: auto; }
+  margin-inline: auto;
+  animation: sectionAnimate 1.1s; }
+  @media only screen and (max-width: 56.2em) {
+    .header {
+      width: 70%; } }
   @media only screen and (max-width: 37.5rem) {
     .header {
       width: 85%; } }

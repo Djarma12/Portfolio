@@ -122,3 +122,29 @@
     box-shadow: 0 0.8rem 1.8rem transparent;
   }
 }
+
+// Animate sections on scroll
+@keyframes sectionAnimate {
+  0% {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+// Animate text letter by letter
+@keyframes animateText {
+  40%,
+  60% {
+    left: calc(100% + 4px);
+  }
+  100% {
+    left: 0%;
+  }
+}

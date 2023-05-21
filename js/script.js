@@ -22,8 +22,7 @@ const observer = new IntersectionObserver(
     if (!ent.isIntersecting) {
       document.body.classList.add("sticky");
       // document.body.classList.remove("nosticky");
-    }
-    if (ent.isIntersecting) {
+    } else {
       document.body.classList.remove("sticky");
       // document.body.classList.add("nosticky");
     }
@@ -36,6 +35,21 @@ const observer = new IntersectionObserver(
 );
 observer.observe(header);
 
+const observerSections = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  }),
+    {
+      threshold: 0.45,
+    };
+});
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observerSections.observe(el));
 ////////////////////////////////////////////
 const allLinks = Array.from(document.querySelectorAll(".navigation__link"));
 // Remove RESUME link in nav, to can download CV
@@ -68,3 +82,17 @@ allLinks.forEach(function (link) {
     }
   });
 });
+
+// Animate text in heading
+const text = document.querySelector(".heading-primary--main");
+const textLoad = () => {
+  setTimeout(() => {
+    text.textContent = "Dusan Madjar";
+  }, 0);
+  setTimeout(() => {
+    text.textContent = "and I'm Frontend Dev.";
+  }, 4000);
+};
+
+textLoad();
+setInterval(textLoad, 8000);

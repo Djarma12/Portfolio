@@ -27,3 +27,13 @@
 .u-margin-top-huge {
   margin-top: 10rem !important;
 }
+
+.hidden {
+  // opacity: 0;
+  // transform: translateY(100%);
+  // transition: all 1s;
+}
+
+.show {
+  animation: sectionAnimate 1.2s ease-out;
+}

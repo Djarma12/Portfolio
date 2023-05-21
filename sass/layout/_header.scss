@@ -3,6 +3,12 @@
   margin: 8rem 11rem 9rem 11rem;
   margin-inline: auto;
 
+  animation: sectionAnimate 1.1s;
+
+  @include respond(tab-port) {
+    width: 70%;
+  }
+
   @include respond(phone) {
     // margin-top: 7rem;
     width: 85%;

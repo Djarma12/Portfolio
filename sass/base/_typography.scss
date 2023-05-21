@@ -26,6 +26,26 @@ body {
       display: inline-block;
       font-size: 7.5rem;
       letter-spacing: 0.2px;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--BgColor);
+        border-left: 2px solid var(--primaryHover);
+        animation: animateText 4s steps(12) infinite;
+      }
+
+      @include respond(tab-port) {
+        font-size: 6.2rem;
+        letter-spacing: 0.2px;
+      }
+
       @include respond(phone) {
         font-size: 6.8rem;
       }

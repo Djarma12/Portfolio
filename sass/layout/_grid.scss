@@ -19,7 +19,8 @@
 
   &--2-cols {
     grid-template-columns: repeat(2, 1fr);
-    @include respond(phone) {
+
+    @include respond(tab-port) {
       grid-template-columns: 1fr !important;
     }
   }
