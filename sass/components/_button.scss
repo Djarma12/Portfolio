@@ -85,6 +85,8 @@
 
     &-animated {
       animation: arrowUpDown 0.65s infinite;
+
+      animation-fill-mode: backwards;
     }
   }
 

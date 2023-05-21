@@ -111,11 +111,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
 @keyframes sectionAnimate {
   0% {
     opacity: 0;
-    filter: blur(3px);
     transform: translateY(100%); }
   100% {
     opacity: 1;
-    filter: blur(0);
     transform: translateY(0); } }
 
 @keyframes animateText {
@@ -188,14 +186,15 @@ body {
       width: 100%;
       background-color: var(--BgColor);
       border-left: 2px solid var(--primaryHover);
-      animation: animateText 4s steps(12) infinite; }
+      animation: animateText 4s steps(12) infinite;
+      animation-fill-mode: backwards; }
     @media only screen and (max-width: 56.2em) {
       .heading-primary--main {
         font-size: 6.2rem;
         letter-spacing: 0.2px; } }
     @media only screen and (max-width: 37.5rem) {
       .heading-primary--main {
-        font-size: 6.8rem; } }
+        font-size: 3.8rem; } }
 
 .heading-secondary {
   font-weight: 600; }
@@ -276,7 +275,8 @@ body {
   margin-top: 10rem !important; }
 
 .show {
-  animation: sectionAnimate 1.2s ease-out; }
+  animation: sectionAnimate 1.2s ease-out;
+  animation-fill-mode: backwards; }
 
 .btn {
   cursor: pointer;
@@ -330,7 +330,8 @@ body {
     margin-left: 0.6rem;
     transform: translateY(1.4px); }
     .btn__icon-animated {
-      animation: arrowUpDown 0.65s infinite; }
+      animation: arrowUpDown 0.65s infinite;
+      animation-fill-mode: backwards; }
   .btn__popup {
     display: block;
     border-radius: 50%;

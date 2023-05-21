@@ -39,6 +39,8 @@ body {
         background-color: var(--BgColor);
         border-left: 2px solid var(--primaryHover);
         animation: animateText 4s steps(12) infinite;
+
+        animation-fill-mode: backwards;
       }
 
       @include respond(tab-port) {
@@ -47,7 +49,7 @@ body {
       }
 
       @include respond(phone) {
-        font-size: 6.8rem;
+        font-size: 3.8rem;
       }
     }
   }
