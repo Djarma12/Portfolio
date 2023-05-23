@@ -32,10 +32,26 @@
   // opacity: 0;
   // transform: translateY(100%);
   // transition: all 1s;
+
+  &--sections {
+  }
+
+  &--left,
+  &--nav {
+    opacity: 0;
+    transform: translateX(0);
+  }
 }
 
 .show {
-  animation: sectionAnimate 1.2s ease-out;
+  &--sections {
+    animation: sectionAnimate 1.2s ease-out;
+    animation-fill-mode: backwards;
+  }
 
-  animation-fill-mode: backwards;
+  &--left,
+  &--nav {
+    animation: leftAnimate 0.3s ease-out;
+    opacity: 1;
+  }
 }

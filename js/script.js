@@ -1,6 +1,6 @@
 "use strict";
 
-// UPDATE NPM TYPE
+// Add navigation for mobile devices
 const navigation = document.querySelector(".navigation");
 const navigationBtn = document.querySelectorAll(".navigation__btn");
 
@@ -14,7 +14,7 @@ navigationBtn.forEach((btn) => {
 });
 
 ///////////////////////////////////////////////
-// const sectionHeroEl = document.querySelector(".navigation");
+// Display navigation when user isn't on header section
 const header = document.querySelector(".header");
 const observer = new IntersectionObserver(
   function (entries) {
@@ -35,11 +35,13 @@ const observer = new IntersectionObserver(
 );
 observer.observe(header);
 
+///////////////////////////////////////////////
+// Animate sections
 const observerSections = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     console.log(entry);
     if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+      entry.target.classList.add("show--sections");
       observer.unobserve(entry.target);
     }
   }),
@@ -48,11 +50,12 @@ const observerSections = new IntersectionObserver((entries) => {
     };
 });
 
-const hiddenElements = document.querySelectorAll(".hidden");
+const hiddenElements = document.querySelectorAll(".hidden--sections");
 hiddenElements.forEach((el) => observerSections.observe(el));
+
 ////////////////////////////////////////////
-const allLinks = Array.from(document.querySelectorAll(".navigation__link"));
 // Remove RESUME link in nav, to can download CV
+const allLinks = Array.from(document.querySelectorAll(".navigation__link"));
 allLinks.forEach((el, key) =>
   el.classList.contains("navigation__link-download")
     ? allLinks.splice(key, 1)
@@ -61,6 +64,8 @@ allLinks.forEach((el, key) =>
 const btnHeader = document.querySelector(".header__buttons").children;
 allLinks.push(...btnHeader);
 
+////////////////////////////////////////////
+// Add smooth scrolling
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
     e.preventDefault();
@@ -83,6 +88,7 @@ allLinks.forEach(function (link) {
   });
 });
 
+////////////////////////////////////////////
 // Animate text in heading
 const text = document.querySelector(".heading-primary--main");
 const textLoad = () => {
@@ -96,3 +102,49 @@ const textLoad = () => {
 
 textLoad();
 setInterval(textLoad, 8000);
+
+////////////////////////////////////////////
+// Animate images and nav items from left and display them
+const animateElements = (entries, className) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add(className);
+      }, 150 * (index + 1));
+    } else {
+      entry.target.classList.remove(className);
+    }
+  });
+};
+
+const observerImages = new IntersectionObserver(
+  (entries) => {
+    animateElements(entries, "show--left");
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+const observerNav = new IntersectionObserver(
+  (entries) => {
+    const isWindowLarge = window.innerWidth > 900;
+
+    animateElements(entries, "show--nav");
+
+    if (isWindowLarge) {
+      entries.forEach((entry) => {
+        observerNav.unobserve(entry.target);
+      });
+    }
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+const hiddenImages = document.querySelectorAll(".hidden--left");
+const hiddenNav = document.querySelectorAll(".hidden--nav");
+
+hiddenImages.forEach((el) => observerImages.observe(el));
+hiddenNav.forEach((el) => observerNav.observe(el));

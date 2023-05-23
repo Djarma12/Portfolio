@@ -146,3 +146,34 @@
     left: 0%;
   }
 }
+
+// Animate from left nav el and images
+@keyframes leftAnimate {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Animate contact card up and down
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 1.8rem 3rem $shadow-cards;
+  }
+
+  50% {
+    transform: translateY(1rem);
+    box-shadow: 0 -1.8rem 3rem $shadow-cards;
+  }
+
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 1.8rem 3rem $shadow-cards;
+  }
+}
