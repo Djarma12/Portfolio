@@ -519,46 +519,27 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem; }
-  .fixed-elements__left-image {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem; }
-  .fixed-elements__img-github {
+  .fixed-elements__img {
     display: inline-block;
     height: 3rem;
     width: 3rem;
-    transition: all 0.3s; }
-    .fixed-elements__img-github:hover {
-      transform: scale(1.1); }
-      .fixed-elements__img-github:hover::before {
-        background: var(--primaryHover); }
-    .fixed-elements__img-github::before {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 3rem;
-      height: 3rem;
-      background: var(--secondaryColor);
-      -webkit-mask-image: url(../../img/github.png);
-      mask-image: url(../../img/github.png);
-      -webkit-mask-size: cover;
-      /* this makes the mask cover the whole overlay */
-      mask-size: cover; }
-  .fixed-elements__img-frontendmentor {
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
+    transition: all 0.3s;
     background: var(--secondaryColor);
-    -webkit-mask-image: url(../../img/frontend-mentor-logo.png);
-    mask-image: url(../../img/frontend-mentor-logo.png);
     -webkit-mask-size: cover;
-    mask-size: cover;
-    transition: all 0.3s; }
-    .fixed-elements__img-frontendmentor:hover {
+    /* this makes the mask cover the whole overlay */
+    mask-size: cover; }
+    .fixed-elements__img:hover {
       transform: scale(1.1);
       background: var(--primaryHover); }
+    .fixed-elements__img-github {
+      -webkit-mask-image: url(../../img/github.png);
+      mask-image: url(../../img/github.png); }
+    .fixed-elements__img-linkedin {
+      -webkit-mask-image: url(../../img/linkedin.png);
+      mask-image: url(../../img/linkedin.png); }
+    .fixed-elements__img-frontendmentor {
+      -webkit-mask-image: url(../../img/frontend-mentor-logo.png);
+      mask-image: url(../../img/frontend-mentor-logo.png); }
   .fixed-elements__right {
     position: fixed;
     bottom: 0;

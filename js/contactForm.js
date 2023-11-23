@@ -24,6 +24,7 @@ const validateFormEl = function (input, trueFalse) {
     input.style.borderBottom = "2.4px solid #00eaff";
   }
 };
+
 //////////////////////////////////////////
 // TESTING MAIL
 form.addEventListener("submit", function (e) {

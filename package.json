@@ -3,7 +3,6 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "concatForm.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "validator:mail": "validator js/script.js",
