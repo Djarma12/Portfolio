@@ -379,7 +379,8 @@ body {
     padding: 0.9rem 0;
     transition: all 0.3s linear;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    font-size: 2rem; }
     .btn__link--number {
       font-weight: 300;
       color: var(--primaryColor); }
@@ -405,7 +406,6 @@ body {
     border-radius: 1px;
     background-color: var(--formColor);
     transition: all 0.2s;
-    font-size: 2rem;
     position: relative;
     z-index: 10;
     overflow-x: hidden; }
@@ -684,7 +684,8 @@ body {
     text-decoration: none; }
 
 .project {
-  justify-items: center; }
+  justify-items: center;
+  margin-bottom: 4rem; }
   .project__card {
     max-width: 40rem;
     height: auto;

@@ -55,14 +55,16 @@ hiddenElements.forEach((el) => observerSections.observe(el));
 
 ////////////////////////////////////////////
 // Remove RESUME link in nav, to can download CV
-const allLinks = Array.from(document.querySelectorAll(".navigation__link"));
-allLinks.forEach((el, key) =>
-  el.classList.contains("navigation__link-download")
-    ? allLinks.splice(key, 1)
-    : null
+let allLinks = Array.from(document.querySelectorAll(".btn__link"));
+allLinks = allLinks.filter(
+  (link) => !link.classList.contains("btn__link-animated")
 );
+// allLinks.forEach((el, key) =>
+//   el.classList.contains("btn__link-animated") ? allLinks.splice(key, 1) : null
+// );
 const btnHeader = document.querySelector(".header__buttons").children;
 allLinks.push(...btnHeader);
+console.log(allLinks);
 
 ////////////////////////////////////////////
 // Add smooth scrolling
