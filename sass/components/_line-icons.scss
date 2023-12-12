@@ -1,21 +1,23 @@
 ////////////////////////////////////////////////
 .fixed-elements {
-  color: var(--secondaryColor);
-  @include respond(phone) {
-    display: none;
-  }
+  // color: var(--secondaryColor);
 
   &__left {
-    position: fixed;
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 2rem;
 
+    position: fixed;
     bottom: 0;
     left: 5%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+
+    @include respond(phone) {
+      margin-top: 3.2rem;
+      justify-content: center;
+      flex-direction: row;
+      position: static;
+    }
   }
 
   &__img {
@@ -58,6 +60,10 @@
     align-items: center;
     flex-direction: column;
 
+    @include respond(phone) {
+      display: none;
+    }
+
     &-mail {
       position: relative;
       display: inline-block;
@@ -97,5 +103,9 @@
     background-color: var(--secondaryColor);
     width: 1px;
     height: 17rem;
+
+    @include respond(phone) {
+      display: none;
+    }
   }
 }

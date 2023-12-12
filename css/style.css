@@ -569,79 +569,87 @@ body {
     height: 20rem;
     margin-inline: auto; }
 
-.fixed-elements {
-  color: var(--secondaryColor); }
+.fixed-elements__left {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 5%; }
   @media only screen and (max-width: 37.5rem) {
-    .fixed-elements {
+    .fixed-elements__left {
+      margin-top: 3.2rem;
+      justify-content: center;
+      flex-direction: row;
+      position: static; } }
+
+.fixed-elements__img {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  transition: all 0.3s;
+  background: var(--secondaryColor);
+  -webkit-mask-size: cover;
+  /* this makes the mask cover the whole overlay */
+  mask-size: cover; }
+  .fixed-elements__img:hover {
+    transform: scale(1.1);
+    background: var(--primaryHover); }
+  .fixed-elements__img-github {
+    -webkit-mask-image: url(../../img/github.png);
+    mask-image: url(../../img/github.png); }
+  .fixed-elements__img-linkedin {
+    -webkit-mask-image: url(../../img/linkedin.png);
+    mask-image: url(../../img/linkedin.png); }
+  .fixed-elements__img-frontendmentor {
+    -webkit-mask-image: url(../../img/frontend-mentor-logo.png);
+    mask-image: url(../../img/frontend-mentor-logo.png); }
+
+.fixed-elements__right {
+  position: fixed;
+  bottom: 0;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  @media only screen and (max-width: 37.5rem) {
+    .fixed-elements__right {
       display: none; } }
-  .fixed-elements__left {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    bottom: 0;
-    left: 5%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem; }
-  .fixed-elements__img {
+  .fixed-elements__right-mail {
+    position: relative;
     display: inline-block;
-    height: 3rem;
-    width: 3rem;
-    transition: all 0.3s;
-    background: var(--secondaryColor);
-    -webkit-mask-size: cover;
-    /* this makes the mask cover the whole overlay */
-    mask-size: cover; }
-    .fixed-elements__img:hover {
-      transform: scale(1.1);
-      background: var(--primaryHover); }
-    .fixed-elements__img-github {
-      -webkit-mask-image: url(../../img/github.png);
-      mask-image: url(../../img/github.png); }
-    .fixed-elements__img-linkedin {
-      -webkit-mask-image: url(../../img/linkedin.png);
-      mask-image: url(../../img/linkedin.png); }
-    .fixed-elements__img-frontendmentor {
-      -webkit-mask-image: url(../../img/frontend-mentor-logo.png);
-      mask-image: url(../../img/frontend-mentor-logo.png); }
-  .fixed-elements__right {
-    position: fixed;
-    bottom: 0;
-    right: 5%;
-    display: flex;
-    align-items: center;
-    flex-direction: column; }
-    .fixed-elements__right-mail {
-      position: relative;
+    -webkit-transform-origin: 100% 0;
+    -moz-transform-origin: 100% 0;
+    -ms-transform-origin: 100% 0;
+    -o-transform-origin: 100% 0;
+    transform-origin: 100% 0%;
+    transform: rotate(90deg) translateX(-5rem);
+    width: auto;
+    height: auto;
+    transition: all 0.3s; }
+    .fixed-elements__right-mail:hover {
+      transform: rotate(90deg) translateX(-4.5rem) scale(1.08); }
+      .fixed-elements__right-mail:hover::after {
+        color: var(--primaryHover); }
+    .fixed-elements__right-mail::after {
+      content: "madjardusan@gmail.com";
       display: inline-block;
-      -webkit-transform-origin: 100% 0;
-      -moz-transform-origin: 100% 0;
-      -ms-transform-origin: 100% 0;
-      -o-transform-origin: 100% 0;
-      transform-origin: 100% 0%;
-      transform: rotate(90deg) translateX(-5rem);
-      width: auto;
-      height: auto;
+      font-weight: 800;
+      color: var(--secondaryColor);
+      font-size: 1.7rem;
+      position: absolute;
+      right: -2rem;
+      top: -1rem;
       transition: all 0.3s; }
-      .fixed-elements__right-mail:hover {
-        transform: rotate(90deg) translateX(-4.5rem) scale(1.08); }
-        .fixed-elements__right-mail:hover::after {
-          color: var(--primaryHover); }
-      .fixed-elements__right-mail::after {
-        content: "madjardusan@gmail.com";
-        display: inline-block;
-        font-weight: 800;
-        color: var(--secondaryColor);
-        font-size: 1.7rem;
-        position: absolute;
-        right: -2rem;
-        top: -1rem;
-        transition: all 0.3s; }
-  .fixed-elements__line {
-    background-color: var(--secondaryColor);
-    width: 1px;
-    height: 17rem; }
+
+.fixed-elements__line {
+  background-color: var(--secondaryColor);
+  width: 1px;
+  height: 17rem; }
+  @media only screen and (max-width: 37.5rem) {
+    .fixed-elements__line {
+      display: none; } }
 
 .popup {
   display: none;
@@ -743,8 +751,7 @@ body {
     display: inline-block;
     width: 100%;
     height: 100%;
-    border-radius: 0.3rem;
-    background-size: cover; }
+    border-radius: 0.3rem; }
   .project__content {
     color: var(--secondaryColor); }
   .project__text {
@@ -768,7 +775,8 @@ body {
         font-size: 1.8rem;
         gap: 1rem; } }
   .project__technology {
-    display: inline-block; }
+    display: inline-block;
+    text-transform: uppercase; }
 
 .skills {
   justify-items: center;
